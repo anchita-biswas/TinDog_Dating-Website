@@ -1,0 +1,1350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinDog — Find Your Dog's Perfect Match</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ════════════════════════════════════
+     LANDING PAGE
+════════════════════════════════════ -->
+    <div id="landing">
+      <!-- NAV -->
+      <nav class="l-nav">
+        <a class="l-logo" href="#">tindog<span>.</span></a>
+        <div class="l-nav-links">
+          <a href="#features">Features</a>
+          <a href="#safety">Safety</a>
+          <a href="#testimonials">Stories</a>
+          <a href="#download">Download</a>
+          <a href="#privacy-section">Privacy</a>
+        </div>
+        <div class="l-nav-cta">
+          <a class="ln-ghost" href="login.html?tab=login">Log In</a>
+          <a class="ln-solid" href="login.html?tab=signup">Get Started</a>
+        </div>
+        <button class="l-burger" id="l-burger" onclick="App.toggleLandNav()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+      <div class="l-mobile-menu hidden" id="l-mobile-menu">
+        <a href="#features" onclick="App.toggleLandNav()">Features</a>
+        <a href="#safety" onclick="App.toggleLandNav()">Safety</a>
+        <a href="#testimonials" onclick="App.toggleLandNav()">Stories</a>
+        <a href="#download" onclick="App.toggleLandNav()">Download</a>
+        <a href="login.html?tab=login">Log In</a>
+        <a class="mmenu-solid" href="login.html?tab=signup">Get Started Free</a>
+      </div>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-badge">🐾 Over 1 million happy matches</div>
+          <h1>
+            Start Something<br /><span class="h1-grad"
+              >Epic. For Your Dog.</span
+            >
+          </h1>
+          <p class="hero-sub">
+            The world's most popular dog dating app. Swipe, match, and find your
+            dog's soulmate — or just their next best friend.
+          </p>
+          <div class="hero-btns">
+            <a class="hbtn-primary" href="login.html?tab=signup"
+              ><i class="fa-solid fa-paw"></i> Start Matching Free</a
+            >
+            <a class="hbtn-ghost" href="login.html?tab=login"
+              >I have an account</a
+            >
+          </div>
+          <div class="hero-stats">
+            <div class="hstat">
+              <strong>1M+</strong><span>Dogs Registered</span>
+            </div>
+            <div class="hstat-div"></div>
+            <div class="hstat">
+              <strong>500K+</strong><span>Matches Made</span>
+            </div>
+            <div class="hstat-div"></div>
+            <div class="hstat">
+              <strong>4.9★</strong><span>App Rating</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-phone-wrap">
+            <img
+              class="hero-phone"
+              src="images/iphone6.png"
+              alt="TinDog on iPhone"
+            />
+          </div>
+          <div class="hero-float hf1">🐕 Rex, 3 · 1.2 km</div>
+          <div class="hero-float hf2">❤️ It's a Match!</div>
+          <div class="hero-float hf3">⭐ Super Liked!</div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="l-section">
+        <p class="eyebrow">// Why TinDog</p>
+        <h2 class="l-h2">Built for Dogs. <em>Loved</em> by Owners.</h2>
+        <p class="l-p">
+          Everything you need to find the perfect playdate or lifelong
+          companion.
+        </p>
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="fi fi-pink"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Instant Matching</h3>
+            <p>Swipe right to like, left to pass. Get matched in seconds.</p>
+          </div>
+          <div class="feat-card">
+            <div class="fi fi-blue">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Nearby Dogs</h3>
+            <p>Find dogs in your area with real distance filtering.</p>
+          </div>
+          <div class="feat-card">
+            <div class="fi fi-green">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Safe & Verified</h3>
+            <p>All profiles reviewed. Chat safely before any meetup.</p>
+          </div>
+          <div class="feat-card">
+            <div class="fi fi-gold"><i class="fa-solid fa-star"></i></div>
+            <h3>Super Likes</h3>
+            <p>Stand out from the pack. Premium gets unlimited super likes.</p>
+          </div>
+          <div class="feat-card">
+            <div class="fi fi-pink"><i class="fa-solid fa-comment"></i></div>
+            <h3>In-App Chat</h3>
+            <p>Message matches directly and plan the perfect play date.</p>
+          </div>
+          <div class="feat-card">
+            <div class="fi fi-blue"><i class="fa-solid fa-sliders"></i></div>
+            <h3>Smart Filters</h3>
+            <p>Filter by breed, size, age, energy level, and distance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRESS -->
+      <section id="press">
+        <p class="press-label">As seen in</p>
+        <div class="press-row">
+          <img class="press-img" src="images/techcrunch.png" alt="TechCrunch" />
+          <img class="press-img" src="images/tnw.png" alt="TNW" />
+          <img
+            class="press-img"
+            src="images/bizinsider.png"
+            alt="Business Insider"
+          />
+          <img class="press-img" src="images/mashable.png" alt="Mashable" />
+        </div>
+      </section>
+
+      <!-- ── SAFETY ───────────────────────────────── -->
+      <section id="safety" class="safety-section">
+        <div class="safety-inner">
+          <div class="safety-text">
+            <p class="eyebrow" style="color: rgba(255, 255, 255, 0.7)">
+              // Safety First
+            </p>
+            <h2 class="l-h2" style="color: #fff">
+              Your Safety Is Our
+              <em style="color: rgba(255, 255, 255, 0.8); font-style: normal"
+                >Priority.</em
+              >
+            </h2>
+            <p
+              style="
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.78);
+                line-height: 1.75;
+                max-width: 440px;
+                margin-bottom: 36px;
+              "
+            >
+              We've built TinDog with your peace of mind at the centre. Every
+              feature is designed to keep you and your dog safe.
+            </p>
+            <a
+              class="hbtn-primary"
+              href="#"
+              style="display: inline-flex; max-width: 220px"
+            >
+              <i class="fa-solid fa-shield-halved"></i> Safety Tips
+            </a>
+          </div>
+          <div class="safety-cards">
+            <div class="safety-card">
+              <div class="sc-icon"><i class="fa-solid fa-id-badge"></i></div>
+              <h3>Profile Verification</h3>
+              <p>
+                All dog profiles are reviewed by our moderation team to ensure
+                every pup you swipe on is the real deal.
+              </p>
+            </div>
+            <div class="safety-card">
+              <div class="sc-icon"><i class="fa-solid fa-lock"></i></div>
+              <h3>Private Messaging</h3>
+              <p>
+                Your conversations are end-to-end encrypted. Your personal
+                contact details are never shared without consent.
+              </p>
+            </div>
+            <div class="safety-card">
+              <div class="sc-icon"><i class="fa-solid fa-ban"></i></div>
+              <h3>Block & Report</h3>
+              <p>
+                Instantly block or report any profile. Our safety team reviews
+                every report within 24 hours.
+              </p>
+            </div>
+            <div class="safety-card">
+              <div class="sc-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <h3>Privacy Controls</h3>
+              <p>
+                Choose exactly what you share. Hide your exact location, control
+                who sees your profile, and manage data easily.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TESTIMONIALS / SWIPE STORIES ─────────── -->
+      <section id="testimonials" class="l-section">
+        <p class="eyebrow">// Swipe Stories</p>
+        <h2 class="l-h2">Real Dogs. <em>Real Matches.</em></h2>
+        <p class="l-p">
+          Join thousands of happy dog owners who found their furry soulmate on
+          TinDog.
+        </p>
+
+        <div class="testi-grid">
+          <div class="testi-card tc-featured">
+            <div class="tc-quote">"</div>
+            <p class="tc-text">
+              We matched on a rainy Tuesday. By Saturday, Buddy and Luna were
+              chasing each other at the park. Now they're inseparable — and so
+              are we! TinDog literally changed our lives.
+            </p>
+            <div class="tc-author">
+              <div class="tc-avatar tc-av1">🐕</div>
+              <div>
+                <strong>Sarah & Buddy</strong>
+                <span>Matched 6 months ago · London</span>
+              </div>
+            </div>
+            <div class="tc-paw">🐾</div>
+          </div>
+          <div class="testi-card">
+            <div class="tc-quote">"</div>
+            <p class="tc-text">
+              I was sceptical at first, but within a week Max had three
+              playdates lined up. The filtering by size and energy level is
+              genius — he only meets dogs that match his vibe.
+            </p>
+            <div class="tc-author">
+              <div class="tc-avatar tc-av2">🐺</div>
+              <div>
+                <strong>James & Max</strong>
+                <span>Matched 3 months ago · Manchester</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="tc-quote">"</div>
+            <p class="tc-text">
+              Pebbles is a shy Corgi and I worried she'd never make friends. The
+              personality tags feature helped me find other calm dogs nearby.
+              She has a best friend now! 🥹
+            </p>
+            <div class="tc-author">
+              <div class="tc-avatar tc-av3">🐶</div>
+              <div>
+                <strong>Priya & Pebbles</strong>
+                <span>Matched 2 months ago · Birmingham</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story slider dots -->
+        <div class="testi-action">
+          <a
+            class="hbtn-primary"
+            href="login.html?tab=signup"
+            style="display: inline-flex; max-width: 240px"
+          >
+            <i class="fa-solid fa-paw"></i> Start Your Story
+          </a>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="l-section l-alt">
+        <p class="eyebrow">// Pricing</p>
+        <h2 class="l-h2">A Plan for Every Dog's <em>Needs</em></h2>
+        <p class="l-p">Simple pricing. No hidden fees. Cancel anytime.</p>
+        <div class="price-grid">
+          <div class="price-card">
+            <h3>Chihuahua</h3>
+            <div class="price-val">Free</div>
+            <ul class="price-ul">
+              <li><i class="fa-solid fa-check"></i> 5 Matches Per Day</li>
+              <li><i class="fa-solid fa-check"></i> 10 Messages Per Day</li>
+              <li><i class="fa-solid fa-check"></i> Basic Filters</li>
+              <li><i class="fa-solid fa-check"></i> 3 Super Likes / Day</li>
+            </ul>
+            <a class="price-btn" href="login.html?tab=signup">Start Free</a>
+          </div>
+          <div class="price-card price-featured">
+            <div class="price-badge">Most Popular</div>
+            <h3>Labrador</h3>
+            <div class="price-val">$19<span>/mo</span></div>
+            <ul class="price-ul">
+              <li><i class="fa-solid fa-check"></i> Unlimited Matches</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited Messages</li>
+              <li><i class="fa-solid fa-check"></i> Advanced Filters</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited Super Likes</li>
+              <li><i class="fa-solid fa-check"></i> See Who Liked You</li>
+            </ul>
+            <a class="price-btn" href="login.html?tab=signup">Get Labrador</a>
+          </div>
+          <div class="price-card">
+            <h3>Mastiff</h3>
+            <div class="price-val">$39<span>/mo</span></div>
+            <ul class="price-ul">
+              <li><i class="fa-solid fa-check"></i> Everything in Labrador</li>
+              <li><i class="fa-solid fa-check"></i> Profile Boost 2×/week</li>
+              <li><i class="fa-solid fa-check"></i> Premium Badge</li>
+              <li><i class="fa-solid fa-check"></i> Priority Support</li>
+              <li><i class="fa-solid fa-check"></i> Rewind Last Swipe</li>
+            </ul>
+            <a class="price-btn" href="login.html?tab=signup">Go Mastiff</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── DOWNLOAD ──────────────────────────────── -->
+      <section id="download" class="download-section">
+        <div class="dl-inner">
+          <div class="dl-text">
+            <p class="eyebrow">// Get the App</p>
+            <h2 class="l-h2">Take TinDog<br /><em>Everywhere.</em></h2>
+            <p class="l-p" style="margin-bottom: 36px">
+              Available on iOS and Android. Free to download — your dog deserves
+              the best, and so do you.
+            </p>
+            <div class="dl-badges">
+              <a
+                href="#"
+                class="dl-badge dl-apple"
+                title="Download on the App Store"
+              >
+                <div class="dl-badge-inner">
+                  <i class="fa-brands fa-apple dl-badge-icon"></i>
+                  <div class="dl-badge-text">
+                    <span>Download on the</span>
+                    <strong>App Store</strong>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="dl-badge dl-google"
+                title="Get it on Google Play"
+              >
+                <div class="dl-badge-inner">
+                  <i class="fa-brands fa-google-play dl-badge-icon"></i>
+                  <div class="dl-badge-text">
+                    <span>Get it on</span>
+                    <strong>Google Play</strong>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <p class="dl-note">
+              ⭐⭐⭐⭐⭐ &nbsp; Rated 4.9 · Over 50K reviews
+            </p>
+          </div>
+          <div class="dl-visual">
+            <div class="dl-phone-stack">
+              <div class="dl-phone dl-phone-back">
+                <div
+                  class="dl-phone-screen"
+                  style="background: linear-gradient(160deg, #ff655b, #fd297b)"
+                >
+                  <div style="padding: 20px; color: #fff">
+                    <div
+                      style="
+                        font-size: 24px;
+                        font-weight: 900;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      ❤️ It's a Match!
+                    </div>
+                    <div style="font-size: 13px; opacity: 0.8">
+                      You and Rex both liked each other!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dl-phone dl-phone-front">
+                <div class="dl-phone-screen" style="background: var(--g4)">
+                  <div style="padding: 16px">
+                    <div
+                      style="
+                        background: #fff;
+                        border-radius: 16px;
+                        padding: 16px;
+                        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: 36px;
+                          text-align: center;
+                          margin-bottom: 8px;
+                        "
+                      >
+                        🐕
+                      </div>
+                      <div
+                        style="
+                          text-align: center;
+                          font-weight: 900;
+                          font-size: 16px;
+                        "
+                      >
+                        Rex, 3
+                      </div>
+                      <div
+                        style="
+                          text-align: center;
+                          font-size: 12px;
+                          color: #757575;
+                          margin-top: 4px;
+                        "
+                      >
+                        1.2 km away · German Shepherd
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          gap: 8px;
+                          justify-content: center;
+                          margin-top: 12px;
+                        "
+                      >
+                        <div
+                          style="
+                            background: #fce4ec;
+                            color: #fd297b;
+                            border-radius: 50%;
+                            width: 44px;
+                            height: 44px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 18px;
+                          "
+                        >
+                          ✕
+                        </div>
+                        <div
+                          style="
+                            background: #e8f5e9;
+                            color: #388e3c;
+                            border-radius: 50%;
+                            width: 44px;
+                            height: 44px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 18px;
+                          "
+                        >
+                          ♥
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PRIVACY SECTION ──────────────────────── -->
+      <section id="privacy-section" class="l-section l-alt">
+        <p class="eyebrow">// Privacy & Trust</p>
+        <h2 class="l-h2">Your Data, <em>Your Rules.</em></h2>
+        <p class="l-p">
+          We believe privacy is a right. Here's our commitment to you.
+        </p>
+        <div class="privacy-grid">
+          <div class="privacy-card">
+            <i class="fa-solid fa-database privacy-icon"></i>
+            <h3>We Never Sell Your Data</h3>
+            <p>
+              Your personal information is never sold to third parties. Ever.
+              It's used only to help your dog find the perfect match.
+            </p>
+            <a href="#" class="privacy-link">Privacy Policy →</a>
+          </div>
+          <div class="privacy-card">
+            <i class="fa-solid fa-eye-slash privacy-icon"></i>
+            <h3>You're in Control</h3>
+            <p>
+              Download, delete, or export your data at any time. Your account,
+              your rules — we make it simple.
+            </p>
+            <a href="#" class="privacy-link">Cookie Policy →</a>
+          </div>
+          <div class="privacy-card">
+            <i class="fa-solid fa-scale-balanced privacy-icon"></i>
+            <h3>Transparent Practices</h3>
+            <p>
+              We follow GDPR and other data protection laws. Our terms are
+              written in plain English — no legal jargon.
+            </p>
+            <a href="#" class="privacy-link">Terms of Service →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="l-cta">
+        <h2>Find the True Love of<br />Your Dog's Life Today.</h2>
+        <p>Join 1 million+ dog owners on TinDog. It's free to start.</p>
+        <div class="cta-btns">
+          <a class="hbtn-primary" href="login.html?tab=signup"
+            ><i class="fa-solid fa-paw"></i> Start Matching Free</a
+          >
+          <a class="hbtn-ghost" href="#pricing">View Plans</a>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer id="footer">
+        <div class="footer-top">
+          <div class="ft-col">
+            <span class="f-logo">tindog<span>.</span></span>
+            <p class="f-tag">Where dogs find love.</p>
+            <div class="f-social">
+              <a href="#" class="f-soc-btn" title="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="f-soc-btn" title="TikTok"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+              <a href="#" class="f-soc-btn" title="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" class="f-soc-btn" title="Twitter"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="#" class="f-soc-btn" title="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+            </div>
+          </div>
+          <div class="ft-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Consumer Health Data</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Intellectual Property</a>
+            <a href="#">Accessibility</a>
+          </div>
+          <div class="ft-col">
+            <h4>Careers</h4>
+            <a href="#">Careers Portal</a>
+            <a href="#">Tech Blog</a>
+          </div>
+          <div class="ft-col">
+            <h4>Help</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Safety Tips</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Press Room</a>
+            <a href="#">Promo Code</a>
+          </div>
+        </div>
+        <div class="footer-dl">
+          <span>Get the app!</span>
+          <a href="#download" class="footer-store-btn">
+            <i class="fa-brands fa-apple"></i> App Store
+          </a>
+          <a href="#download" class="footer-store-btn">
+            <i class="fa-brands fa-google-play"></i> Google Play
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <div class="f-bottom-links">
+            <a href="#">FAQ</a>
+            <span>/</span>
+            <a href="#">Safety Tips</a>
+            <span>/</span>
+            <a href="#">Terms</a>
+            <span>/</span>
+            <a href="#">Cookie Policy</a>
+            <span>/</span>
+            <a href="#">Privacy Settings</a>
+          </div>
+          <p class="f-copy">© 2026 TinDog. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <!-- /#landing -->
+
+    <!-- ════════════════════════════════════
+     APP SHELL
+════════════════════════════════════ -->
+    <div id="app" class="hidden">
+      <!-- DESKTOP: Left Sidebar -->
+      <aside id="sidebar">
+        <a class="sb-logo" href="#">tindog<span>.</span></a>
+        <nav class="sb-nav">
+          <button
+            class="sb-btn active"
+            data-view="discover"
+            onclick="App.navigate('discover', this)"
+            title="Discover"
+          >
+            <i class="fa-solid fa-fire"></i><span>Discover</span>
+          </button>
+          <button
+            class="sb-btn"
+            data-view="matches"
+            onclick="App.navigate('matches', this)"
+            title="Matches"
+          >
+            <i class="fa-solid fa-heart"></i><span>Matches</span>
+            <span
+              class="sb-badge"
+              id="sb-matches-badge"
+              style="display: none"
+            ></span>
+          </button>
+          <button
+            class="sb-btn"
+            data-view="messages"
+            onclick="App.navigate('messages', this)"
+            title="Messages"
+          >
+            <i class="fa-regular fa-comment"></i><span>Messages</span>
+            <span
+              class="sb-badge"
+              id="sb-chat-badge"
+              style="display: none"
+            ></span>
+          </button>
+          <button
+            class="sb-btn"
+            data-view="profile"
+            onclick="App.navigate('profile', this)"
+            title="Profile"
+          >
+            <i class="fa-regular fa-user"></i><span>Profile</span>
+          </button>
+        </nav>
+        <div class="sb-bottom">
+          <button
+            class="sb-icon-btn"
+            onclick="App.openFilters()"
+            title="Filters"
+          >
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+          <button
+            class="sb-icon-btn"
+            id="notif-sb-btn"
+            onclick="App.toggleNotifPanel()"
+            title="Notifications"
+          >
+            <i class="fa-solid fa-bell"></i>
+            <span
+              class="sb-badge"
+              id="sb-notif-badge"
+              style="display: none"
+            ></span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MOBILE: Top Bar -->
+      <header id="mobile-topbar">
+        <button class="mob-icon-btn" onclick="App.openFilters()">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+        <a class="mob-logo" href="#">tindog<span>.</span></a>
+        <button
+          class="mob-icon-btn"
+          id="mob-notif-btn"
+          onclick="App.toggleNotifPanel()"
+        >
+          <i class="fa-solid fa-bell"></i>
+          <span
+            class="mob-notif-dot"
+            id="mob-notif-dot"
+            style="display: none"
+          ></span>
+        </button>
+      </header>
+
+      <!-- CENTER AREA -->
+      <main id="app-center">
+        <!-- DISCOVER VIEW -->
+        <div class="av" id="av-discover">
+          <div class="card-arena">
+            <div id="card-stack"></div>
+          </div>
+          <div class="ctrl-row">
+            <button
+              class="ctrl-btn pass-btn"
+              onclick="App.swipeCard(-1)"
+              title="Pass"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button
+              class="ctrl-btn rewind-btn"
+              onclick="App.rewind()"
+              title="Rewind"
+            >
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button
+              class="ctrl-btn super-btn"
+              onclick="App.swipeCard(0)"
+              title="Super Like"
+            >
+              <i class="fa-solid fa-star"></i>
+            </button>
+            <button
+              class="ctrl-btn boost-btn"
+              onclick="App.boost()"
+              title="Boost"
+            >
+              <i class="fa-solid fa-bolt"></i>
+            </button>
+            <button
+              class="ctrl-btn like-btn"
+              onclick="App.swipeCard(1)"
+              title="Like"
+            >
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+          <div class="daily-info">
+            <span
+              ><i class="fa-solid fa-star" style="color: #00b4d8"></i>
+              <span id="super-left">3</span> super likes</span
+            >
+            <span
+              ><i class="fa-solid fa-heart" style="color: #01e054"></i>
+              Unlimited likes</span
+            >
+          </div>
+        </div>
+
+        <!-- PROFILE VIEW -->
+        <div class="av hidden" id="av-profile">
+          <div class="pv-wrap">
+            <div class="pv-card">
+              <div class="pv-avatar-wrap">
+                <img id="pv-photo" src="" alt="Your dog" />
+                <div class="pv-premium hidden" id="pv-premium-badge">
+                  <i class="fa-solid fa-crown"></i> Premium
+                </div>
+              </div>
+              <h2 id="pv-name">Your Dog</h2>
+              <p id="pv-meta" class="pv-meta">Breed · Age · Location</p>
+              <div id="pv-tags" class="pv-tags"></div>
+              <p id="pv-bio" class="pv-bio"></p>
+            </div>
+            <div class="pv-actions">
+              <button class="pv-btn pv-edit" onclick="App.openProfileEdit()">
+                <i class="fa-solid fa-pen"></i> Edit Profile
+              </button>
+              <button class="pv-btn pv-gold" onclick="App.upgradePremium()">
+                <i class="fa-solid fa-crown"></i> Go Premium
+              </button>
+            </div>
+            <div class="pv-stats">
+              <div class="pvs">
+                <strong id="pvs-matches">0</strong><span>Matches</span>
+              </div>
+              <div class="pvs">
+                <strong id="pvs-likes">0</strong><span>Likes Given</span>
+              </div>
+              <div class="pvs">
+                <strong id="pvs-supers">0</strong><span>Super Likes</span>
+              </div>
+            </div>
+            <div class="pv-settings">
+              <div class="setting-row" onclick="App.openFilters()">
+                <i class="fa-solid fa-sliders sr-icon"></i>
+                <span>Discovery Preferences</span>
+                <i class="fa-solid fa-chevron-right sr-arr"></i>
+              </div>
+              <div class="setting-row" onclick="App.signOut()">
+                <i class="fa-solid fa-right-from-bracket sr-icon"></i>
+                <span>Sign Out</span>
+                <i class="fa-solid fa-chevron-right sr-arr"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT PANEL (Desktop) / Full Views (Mobile) -->
+      <aside id="right-panel">
+        <!-- MATCHES PANEL -->
+        <div class="rp-view" id="rp-matches">
+          <div class="rp-hd">
+            <h2>Matches</h2>
+            <p class="rp-sub" id="rp-match-count">0 matches</p>
+          </div>
+          <div class="new-matches-scroll" id="new-matches-row"></div>
+          <div class="rp-divider"><span>All Matches</span></div>
+          <div id="all-matches-list" class="match-list"></div>
+        </div>
+
+        <!-- MESSAGES PANEL -->
+        <div class="rp-view hidden" id="rp-messages">
+          <div class="rp-hd"><h2>Messages</h2></div>
+          <div id="msg-list" class="match-list"></div>
+        </div>
+
+        <!-- CHAT PANEL (replaces right panel on desktop) -->
+        <div class="rp-view hidden" id="rp-chat">
+          <div class="chat-panel-hd">
+            <button class="back-btn" onclick="App.closeChatPanel()">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <img class="cp-avatar" id="cp-avatar" src="" alt="" />
+            <div class="cp-info">
+              <h3 id="cp-name">Name</h3>
+              <span class="cp-online">● Online</span>
+            </div>
+            <button
+              class="mob-icon-btn"
+              onclick="App.showToast('📹 Video calls coming soon!', 'info')"
+            >
+              <i class="fa-solid fa-video"></i>
+            </button>
+          </div>
+          <div class="chat-messages" id="chat-msgs"></div>
+          <div class="chat-input-row">
+            <button
+              class="ci-attach"
+              onclick="App.showToast('📎 Photo sharing coming soon!', 'info')"
+            >
+              <i class="fa-solid fa-image"></i>
+            </button>
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Type a message…"
+              onkeydown="if (event.key === 'Enter') App.sendMessage();"
+            />
+            <button class="ci-send" onclick="App.sendMessage()">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div class="rp-empty" id="rp-empty">
+          <div class="rpe-icon">💬</div>
+          <h3>It's a Match!</h3>
+          <p>
+            Start swiping to get your first match. Once matched, you can start
+            chatting here.
+          </p>
+        </div>
+      </aside>
+
+      <!-- MOBILE: Bottom Nav -->
+      <nav id="mobile-nav">
+        <button
+          class="mn-btn active"
+          data-view="discover"
+          onclick="App.navigate('discover', this)"
+        >
+          <i class="fa-solid fa-fire"></i><span>Discover</span>
+        </button>
+        <button
+          class="mn-btn"
+          data-view="matches"
+          onclick="App.navigate('matches', this)"
+        >
+          <i class="fa-solid fa-heart"></i><span>Matches</span>
+          <span
+            class="mn-badge"
+            id="mn-matches-badge"
+            style="display: none"
+          ></span>
+        </button>
+        <button
+          class="mn-btn"
+          data-view="messages"
+          onclick="App.navigate('messages', this)"
+        >
+          <i class="fa-regular fa-comment"></i><span>Messages</span>
+          <span
+            class="mn-badge"
+            id="mn-chat-badge"
+            style="display: none"
+          ></span>
+        </button>
+        <button
+          class="mn-btn"
+          data-view="profile"
+          onclick="App.navigate('profile', this)"
+        >
+          <i class="fa-regular fa-user"></i><span>Profile</span>
+        </button>
+      </nav>
+    </div>
+    <!-- /#app -->
+
+    <!-- ════════════════════════════════════
+     MODALS
+════════════════════════════════════ -->
+
+    <!-- ONBOARDING -->
+    <div class="overlay hidden" id="modal-onboard">
+      <div class="sheet ob-sheet">
+        <div class="ob-prog" id="ob-prog">
+          <div class="ob-bar" id="ob-b1"></div>
+          <div class="ob-bar" id="ob-b2"></div>
+          <div class="ob-bar" id="ob-b3"></div>
+          <div class="ob-bar" id="ob-b4"></div>
+        </div>
+
+        <!-- Step 0 — Welcome -->
+        <div class="ob-step hidden" id="ob-s0">
+          <div class="ob-emoji">🐾</div>
+          <h2 class="sh-title">Welcome to TinDog!</h2>
+          <p class="sh-sub">
+            Let's set up your dog's profile. It only takes 4 quick steps.
+          </p>
+          <div class="ob-steps-preview">
+            <div class="ob-preview-item">
+              <span class="ob-preview-num">1</span>
+              <span>Tell us about your dog</span>
+            </div>
+            <div class="ob-preview-item">
+              <span class="ob-preview-num">2</span>
+              <span>Add a photo &amp; bio</span>
+            </div>
+            <div class="ob-preview-item">
+              <span class="ob-preview-num">3</span>
+              <span>Choose personality tags</span>
+            </div>
+            <div class="ob-preview-item">
+              <span class="ob-preview-num">4</span>
+              <span>Set your location</span>
+            </div>
+          </div>
+          <button class="btn-full" onclick="App.goObStep(1)">
+            Let's Go <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Step 1 — Dog Info -->
+        <div class="ob-step hidden" id="ob-s1">
+          <div class="ob-emoji">🐕</div>
+          <h2 class="sh-title">Tell us about your dog!</h2>
+          <p class="sh-sub">Let's set up your dog's profile.</p>
+          <div class="fg">
+            <label>Dog's Name</label
+            ><input type="text" id="od-name" placeholder="e.g. Buddy" />
+          </div>
+          <div class="fg">
+            <label>Breed</label>
+            <select id="od-breed">
+              <option value="">Select breed…</option>
+              <option>Labrador Retriever</option>
+              <option>German Shepherd</option>
+              <option>Golden Retriever</option>
+              <option>French Bulldog</option>
+              <option>Bulldog</option>
+              <option>Poodle</option>
+              <option>Beagle</option>
+              <option>Husky</option>
+              <option>Corgi</option>
+              <option>Dachshund</option>
+              <option>Border Collie</option>
+              <option>Shih Tzu</option>
+              <option>Dalmatian</option>
+              <option>Mixed Breed</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="row2">
+            <div class="fg">
+              <label>Age (years)</label
+              ><input
+                type="number"
+                id="od-age"
+                placeholder="3"
+                min="0"
+                max="20"
+              />
+            </div>
+            <div class="fg">
+              <label>Size</label
+              ><select id="od-size">
+                <option value="">Size…</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>Giant</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-full" onclick="App.obNext(1)">
+            Continue <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Step 2 — Photo & Bio -->
+        <div class="ob-step hidden" id="ob-s2">
+          <div class="ob-emoji">📸</div>
+          <h2 class="sh-title">Add a photo &amp; bio</h2>
+          <p class="sh-sub">First impressions matter!</p>
+          <div
+            class="photo-drop"
+            id="od-photo-drop"
+            onclick="document.getElementById('od-file').click()"
+          >
+            <img
+              id="od-photo-prev"
+              src=""
+              alt=""
+              style="
+                display: none;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              "
+            />
+            <div id="od-photo-ph">
+              <i class="fa-solid fa-camera"></i>
+              <p>Tap to upload photo</p>
+              <small>or paste URL below</small>
+            </div>
+          </div>
+          <input
+            type="file"
+            id="od-file"
+            accept="image/*"
+            style="display: none"
+            onchange="App.handleFile(event, 'od-photo-prev', 'od-photo-ph')"
+          />
+          <div class="fg">
+            <label>Or image URL</label
+            ><input
+              type="url"
+              id="od-url"
+              placeholder="https://…"
+              oninput="
+                App.previewURL(this.value, 'od-photo-prev', 'od-photo-ph')
+              "
+            />
+          </div>
+          <div class="fg">
+            <label>Bio <span class="char-ct" id="bio-ct">0/150</span></label
+            ><textarea
+              id="od-bio"
+              rows="3"
+              maxlength="150"
+              placeholder="Describe your dog's personality, hobbies, and what they're looking for…"
+              oninput="
+                document.getElementById('bio-ct').textContent =
+                  this.value.length + '/150'
+              "
+            ></textarea>
+          </div>
+          <button class="btn-full" onclick="App.obNext(2)">
+            Continue <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Step 3 — Personality -->
+        <div class="ob-step hidden" id="ob-s3">
+          <div class="ob-emoji">💫</div>
+          <h2 class="sh-title">Personality</h2>
+          <p class="sh-sub">Pick up to 5 tags that describe your dog.</p>
+          <div class="tag-picker" id="tag-picker"></div>
+          <button class="btn-full" onclick="App.obNext(3)">
+            Continue <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Step 4 — Location -->
+        <div class="ob-step hidden" id="ob-s4">
+          <div class="ob-emoji">📍</div>
+          <h2 class="sh-title">Enable Location</h2>
+          <p class="sh-sub">
+            We'll show you dogs nearby. We never share your exact address.
+          </p>
+          <div class="loc-vis">
+            <div class="loc-circle">
+              <span class="loc-pin">📍</span>
+              <div class="loc-r lr1"></div>
+              <div class="loc-r lr2"></div>
+              <div class="loc-r lr3"></div>
+            </div>
+          </div>
+          <button class="btn-full" onclick="App.requestLocation()">
+            <i class="fa-solid fa-location-dot"></i> Enable Location
+          </button>
+          <button class="btn-ghost-full" onclick="App.skipLocation()">
+            Skip for Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="overlay hidden" id="modal-filters">
+      <div class="sheet">
+        <div class="sh-hd">
+          <h2>Discovery Settings</h2>
+          <button class="sh-close-inline" onclick="App.closeFilters()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="fsec">
+          <label class="flbl">Breed</label
+          ><select class="fsel" id="f-breed">
+            <option value="">Any breed</option>
+            <option>Labrador Retriever</option>
+            <option>German Shepherd</option>
+            <option>Golden Retriever</option>
+            <option>French Bulldog</option>
+            <option>Poodle</option>
+            <option>Beagle</option>
+            <option>Husky</option>
+            <option>Corgi</option>
+            <option>Mixed Breed</option>
+          </select>
+        </div>
+        <div class="fsec">
+          <label class="flbl">Size</label>
+          <div class="chip-row" id="f-size">
+            <button class="chip active" data-v="">Any</button
+            ><button class="chip" data-v="Small">Small</button
+            ><button class="chip" data-v="Medium">Medium</button
+            ><button class="chip" data-v="Large">Large</button
+            ><button class="chip" data-v="Giant">Giant</button>
+          </div>
+        </div>
+        <div class="fsec">
+          <label class="flbl"
+            >Age Range: <span id="f-age-lbl">0–15 yrs</span></label
+          ><input
+            type="range"
+            id="f-age-min"
+            min="0"
+            max="15"
+            value="0"
+            oninput="App.updateAge()"
+          /><input
+            type="range"
+            id="f-age-max"
+            min="0"
+            max="15"
+            value="15"
+            oninput="App.updateAge()"
+            style="margin-top: 8px"
+          />
+        </div>
+        <div class="fsec">
+          <label class="flbl"
+            >Max Distance: <span id="f-dist-lbl">25 km</span></label
+          ><input
+            type="range"
+            id="f-distance"
+            min="1"
+            max="100"
+            value="25"
+            oninput="App.updateDist()"
+          />
+        </div>
+        <div class="fsec">
+          <label class="flbl">Energy Level</label>
+          <div class="chip-row" id="f-energy">
+            <button class="chip active" data-v="">Any</button
+            ><button class="chip" data-v="Low">Low 😴</button
+            ><button class="chip" data-v="Medium">Medium 🐕</button
+            ><button class="chip" data-v="High">High ⚡</button>
+          </div>
+        </div>
+        <div class="f-actions">
+          <button class="btn-ghost-full" onclick="App.resetFilters()">
+            Reset</button
+          ><button class="btn-full" onclick="App.applyFilters()">Apply</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MATCH CELEBRATION -->
+    <div class="overlay match-overlay hidden" id="modal-match">
+      <div class="match-modal">
+        <div id="confetti-container"></div>
+        <div class="match-photos">
+          <img id="match-my-img" src="" alt="" />
+          <div class="match-hearts">❤️</div>
+          <img id="match-their-img" src="" alt="" />
+        </div>
+        <h2 class="match-ttl">It's a Match!</h2>
+        <p class="match-sub">
+          You and <strong id="match-dog-nm"></strong> both liked each other!
+        </p>
+        <button class="btn-full match-msg-btn" onclick="App.openMatchChat()">
+          <i class="fa-solid fa-comment"></i> Send a Message
+        </button>
+        <button
+          class="btn-ghost-full match-skip-btn"
+          onclick="App.closeMatch()"
+        >
+          Keep Swiping
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE CHAT OVERLAY -->
+    <div class="overlay full-overlay hidden" id="modal-mobile-chat">
+      <div class="mobile-chat-win">
+        <div class="chat-panel-hd">
+          <button class="back-btn" onclick="App.closeMobileChat()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <img class="cp-avatar" id="mc-avatar" src="" alt="" />
+          <div class="cp-info">
+            <h3 id="mc-name">Name</h3>
+            <span class="cp-online">● Online</span>
+          </div>
+          <button
+            class="mob-icon-btn"
+            onclick="App.showToast('📹 Video calls coming soon!', 'info')"
+          >
+            <i class="fa-solid fa-video"></i>
+          </button>
+        </div>
+        <div class="chat-messages" id="mob-chat-msgs"></div>
+        <div class="chat-input-row">
+          <button
+            class="ci-attach"
+            onclick="App.showToast('📎 Photo sharing coming soon!', 'info')"
+          >
+            <i class="fa-solid fa-image"></i>
+          </button>
+          <input
+            type="text"
+            id="mob-chat-input"
+            placeholder="Type a message…"
+            onkeydown="if (event.key === 'Enter') App.sendMobileMessage();"
+          />
+          <button class="ci-send" onclick="App.sendMobileMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE EDIT -->
+    <div class="overlay hidden" id="modal-profile-edit">
+      <div class="sheet">
+        <div class="sh-hd">
+          <h2>Edit Profile</h2>
+          <button class="sh-close-inline" onclick="App.closeProfileEdit()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div
+          class="photo-drop small-drop"
+          id="ep-photo-drop"
+          onclick="document.getElementById('ep-file').click()"
+        >
+          <img
+            id="ep-photo-prev"
+            src=""
+            alt=""
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 50%;
+            "
+          />
+        </div>
+        <input
+          type="file"
+          id="ep-file"
+          accept="image/*"
+          style="display: none"
+          onchange="App.handleFile(event, 'ep-photo-prev', null)"
+        />
+        <div class="fg">
+          <label>Dog's Name</label><input type="text" id="ep-name" />
+        </div>
+        <div class="fg">
+          <label>Breed</label><input type="text" id="ep-breed" />
+        </div>
+        <div class="fg">
+          <label>Age</label><input type="number" id="ep-age" min="0" max="20" />
+        </div>
+        <div class="fg">
+          <label>Bio</label
+          ><textarea id="ep-bio" rows="3" maxlength="150"></textarea>
+        </div>
+        <button class="btn-full" onclick="App.saveProfile()">
+          Save Changes
+        </button>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION PANEL -->
+    <div id="notif-panel" class="hidden">
+      <div class="np-hd">
+        <h3>Notifications</h3>
+        <button onclick="App.clearNotifs()">Clear all</button>
+      </div>
+      <div id="notif-list"></div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-box"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+https://anchita-biswas.github.io/TinDog---Dating-Website/
+
+
+this is a dating website i have created for dogs. i want it to look modern and fully responsive for screens of 360px. here are some of the additional features i want to implement: 
+1. Add User Profiles: Allow users to create profiles for their dogs with photos, breed, age, personality, and location.
+2. Introduce Swipe/Match Feature: Create a Tinder-like card system where users can swipe left/right or like/dislike dogs.
+3. Build a Chat System: Add messaging so matched users can interact—this is a core feature missing right now.
+4. Add Login/Signup Flow: Your site currently has no real user system. Add authentication and onboarding.
+5. Implement Location-Based Matching: “Nearby dogs” should actually work using location filtering.
+6. Add Filters & Preferences: Let users filter by breed, size, age, distance, etc.
+7. Replace Static Sections with Interactive Feed: Instead of testimonials, show a live “discover dogs” or match feed.
+8. Improve CTA (Call-to-Action): Replace “Download” buttons with “Start Matching” or “Create Profile”.
+9. Add Micro-Interactions & Animations: Use hover effects, swipe animations, loading states to make it feel like an app.
+10. Introduce Gamification: Features like super likes, boosts, or premium badges increase engagement.
+11. Add Notifications: Show alerts for new matches, likes, and messages.
+12. Make UI More App-Like: Use card layouts, bottom navigation, and floating buttons instead of a static website layout.
