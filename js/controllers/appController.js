@@ -11,23 +11,16 @@ const App = {
     document.getElementById('l-mobile-menu').classList.toggle('hidden');
   },
 
-  /* ── Sign Out ──────────────────────────────── */
-  signOut() {
-    state.user = null;
-    state.profile = null;
-    clearSession(); // fixes: previous session's matches/chats/notifs no longer survive sign-out
-    hide('app');
-    show('landing');
-    showToast('Signed out successfully', 'success');
-    setTimeout(() => { window.scrollTo(0, 0); }, 100);
+  /* ── Reset Demo ────────────────────────────── */
+  // Reload rather than unwind state by hand — every field resets for free,
+  // and the landing page is the default render.
+  resetDemo() {
+    clearSession();
+    location.reload();
   },
 
   /* ── Enter App ─────────────────────────────── */
   enterApp() {
-    if (!state.profile) {
-      this.startOnboarding();
-      return;
-    }
     hide('landing');
     show('app');
     buildPool();
@@ -51,6 +44,20 @@ const App = {
     this.initTagPicker();
     show('modal-onboard');
     this.goObStep(0);
+  },
+
+  // One click from the landing page to a live swipe deck, for visitors who
+  // want to see the app rather than fill in a 4-step form.
+  demoProfile() {
+    state.profile = {
+      name: 'Buddy', breed: 'Corgi', age: 2, size: 'Small',
+      bio: 'Professional treat inspector. Semi-retired. Will steal your socks.',
+      personality: ['Playful', 'Cuddly', 'Smart'],
+      photo: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80',
+    };
+    save();
+    hide('modal-onboard');
+    this.enterApp();
   },
 
   goObStep(n) {
@@ -331,28 +338,37 @@ const App = {
   },
 
   _doSend(input, containerId) {
-    if (!input || !state.currentChatId) return;
+    const chatId = state.currentChatId;
+    if (!input || !chatId) return;
     const text = input.value.trim();
     if (!text) return;
     input.value = '';
 
     const msg = { id: 'm' + Date.now(), role: 'sent', text, ts: Date.now() };
-    if (!state.messages[state.currentChatId]) state.messages[state.currentChatId] = [];
-    state.messages[state.currentChatId].push(msg);
+    if (!state.messages[chatId]) state.messages[chatId] = [];
+    state.messages[chatId].push(msg);
     save();
-    renderChatMessages(containerId, state.currentChatId);
+    renderChatMessages(containerId, chatId);
     renderMatchesList();
+
+    showTyping(containerId);
     const delay = 1200 + Math.random() * 1800;
-    setTimeout(() => this.autoReply(containerId), delay);
+    // chatId and text are captured here, so the reply always lands in the
+    // conversation it was sent from even if the user switches chats mid-wait.
+    setTimeout(() => this.autoReply(containerId, chatId, text), delay);
   },
 
-  autoReply(containerId) {
-    if (!state.currentChatId) return;
-    const reply = BOT_REPLIES[Math.floor(Math.random() * BOT_REPLIES.length)];
-    const msg = { id: 'r' + Date.now(), role: 'received', text: reply, ts: Date.now() };
-    state.messages[state.currentChatId].push(msg);
+  autoReply(containerId, matchId, userText) {
+    hideTyping(containerId);
+    const match = state.matches.find(m => m.id === matchId);
+    const dog   = match && DOGS.find(d => d.id === match.dogId);
+    if (!dog) return;
+
+    state.messages[matchId].push({
+      id: 'r' + Date.now(), role: 'received', text: botReply(dog, userText), ts: Date.now(),
+    });
     save();
-    renderChatMessages(containerId, state.currentChatId);
+    if (matchId === state.currentChatId) renderChatMessages(containerId, matchId);
     renderMatchesList();
   },
 
@@ -559,11 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── ROUTING ON LOAD ─────────────────────────
-  if (state.user && state.profile) {
-    hide('landing');
-    App.enterApp();
-  } else if (state.user && !state.profile) {
-    App.startOnboarding();
-  }
-  // else: no user → show landing (default state)
+  // The profile is the session — no profile means a first visit, and the
+  // landing page is already what the markup renders.
+  if (state.profile) App.enterApp();
 });

@@ -1,12 +1,11 @@
 /* ============================================================
    Model — Session
-   The set of localStorage keys that belong to a single logged-in
-   session (as opposed to `td_users`, the permanent accounts table).
-   Shared by index.html and login.html so switching accounts can't
-   leak one user's matches/chats into the next.
+   The set of localStorage keys holding the current demo session.
+   There are no accounts: the profile IS the session, so clearing
+   these keys returns the app to a first-visit state.
    ============================================================ */
 const SESSION_KEYS = [
-  'td_user', 'td_profile', 'td_passed', 'td_matchIds',
+  'td_profile', 'td_passed', 'td_matchIds',
   'td_matches', 'td_messages', 'td_filters', 'td_stats', 'td_notifs',
 ];
 

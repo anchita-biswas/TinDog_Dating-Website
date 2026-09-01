@@ -298,6 +298,20 @@ function renderChatMessages(containerId, matchId) {
   container.scrollTop = container.scrollHeight;
 }
 
+function showTyping(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container || container.querySelector('.typing')) return;
+  const el = document.createElement('div');
+  el.className = 'msg received typing';
+  el.innerHTML = '<span></span><span></span><span></span>';
+  container.appendChild(el);
+  container.scrollTop = container.scrollHeight;
+}
+
+function hideTyping(containerId) {
+  document.getElementById(containerId)?.querySelector('.typing')?.remove();
+}
+
 /* ── PROFILE ─────────────────────────────────── */
 function renderProfile() {
   const p = state.profile;

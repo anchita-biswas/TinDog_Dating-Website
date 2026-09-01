@@ -33,8 +33,7 @@
           <a href="#privacy-section">Privacy</a>
         </div>
         <div class="l-nav-cta">
-          <a class="ln-ghost" href="login.html?tab=login">Log In</a>
-          <a class="ln-solid" href="login.html?tab=signup">Get Started</a>
+          <a class="ln-solid" href="#" onclick="App.startOnboarding(); return false">Get Started</a>
         </div>
         <button class="l-burger" id="l-burger" onclick="App.toggleLandNav()">
           <i class="fa-solid fa-bars"></i>
@@ -45,8 +44,7 @@
         <a href="#safety" onclick="App.toggleLandNav()">Safety</a>
         <a href="#testimonials" onclick="App.toggleLandNav()">Stories</a>
         <a href="#download" onclick="App.toggleLandNav()">Download</a>
-        <a href="login.html?tab=login">Log In</a>
-        <a class="mmenu-solid" href="login.html?tab=signup">Get Started Free</a>
+        <a class="mmenu-solid" href="#" onclick="App.startOnboarding(); return false">Get Started Free</a>
       </div>
 
       <!-- HERO -->
@@ -63,11 +61,8 @@
             dog's soulmate — or just their next best friend.
           </p>
           <div class="hero-btns">
-            <a class="hbtn-primary" href="login.html?tab=signup"
+            <a class="hbtn-primary" href="#" onclick="App.startOnboarding(); return false"
               ><i class="fa-solid fa-paw"></i> Start Matching Free</a
-            >
-            <a class="hbtn-ghost" href="login.html?tab=login"
-              >I have an account</a
             >
           </div>
           <div class="hero-stats">
@@ -291,7 +286,7 @@
         <div class="testi-action">
           <a
             class="hbtn-primary"
-            href="login.html?tab=signup"
+            href="#" onclick="App.startOnboarding(); return false"
             style="display: inline-flex; max-width: 240px"
           >
             <i class="fa-solid fa-paw"></i> Start Your Story
@@ -314,7 +309,7 @@
               <li><i class="fa-solid fa-check"></i> Basic Filters</li>
               <li><i class="fa-solid fa-check"></i> 3 Super Likes / Day</li>
             </ul>
-            <a class="price-btn" href="login.html?tab=signup">Start Free</a>
+            <a class="price-btn" href="#" onclick="App.startOnboarding(); return false">Start Free</a>
           </div>
           <div class="price-card price-featured">
             <div class="price-badge">Most Popular</div>
@@ -327,7 +322,7 @@
               <li><i class="fa-solid fa-check"></i> Unlimited Super Likes</li>
               <li><i class="fa-solid fa-check"></i> See Who Liked You</li>
             </ul>
-            <a class="price-btn" href="login.html?tab=signup">Get Labrador</a>
+            <a class="price-btn" href="#" onclick="App.startOnboarding(); return false">Get Labrador</a>
           </div>
           <div class="price-card">
             <h3>Mastiff</h3>
@@ -339,7 +334,7 @@
               <li><i class="fa-solid fa-check"></i> Priority Support</li>
               <li><i class="fa-solid fa-check"></i> Rewind Last Swipe</li>
             </ul>
-            <a class="price-btn" href="login.html?tab=signup">Go Mastiff</a>
+            <a class="price-btn" href="#" onclick="App.startOnboarding(); return false">Go Mastiff</a>
           </div>
         </div>
       </section>
@@ -539,7 +534,7 @@
         <h2>Find the True Love of<br />Your Dog's Life Today.</h2>
         <p>Join 1 million+ dog owners on TinDog. It's free to start.</p>
         <div class="cta-btns">
-          <a class="hbtn-primary" href="login.html?tab=signup"
+          <a class="hbtn-primary" href="#" onclick="App.startOnboarding(); return false"
             ><i class="fa-solid fa-paw"></i> Start Matching Free</a
           >
           <a class="hbtn-ghost" href="#pricing">View Plans</a>
@@ -811,9 +806,9 @@
                 <span>Discovery Preferences</span>
                 <i class="fa-solid fa-chevron-right sr-arr"></i>
               </div>
-              <div class="setting-row" onclick="App.signOut()">
-                <i class="fa-solid fa-right-from-bracket sr-icon"></i>
-                <span>Sign Out</span>
+              <div class="setting-row" onclick="App.resetDemo()">
+                <i class="fa-solid fa-rotate-left sr-icon"></i>
+                <span>Reset Demo</span>
                 <i class="fa-solid fa-chevron-right sr-arr"></i>
               </div>
             </div>
@@ -974,6 +969,9 @@
           </div>
           <button class="btn-full" onclick="App.goObStep(1)">
             Let's Go <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button class="btn-ghost-full" onclick="App.demoProfile()">
+            Skip — just show me the app
           </button>
         </div>
 

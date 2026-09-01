@@ -2,7 +2,6 @@
    Model — App state, persistence, and pool building
    ============================================================ */
 const state = {
-  user: null,
   profile: null,
   dogs: [...DOGS],
   pool: [],
@@ -22,7 +21,6 @@ const state = {
 };
 
 function save() {
-  localStorage.setItem('td_user', JSON.stringify(state.user));
   localStorage.setItem('td_profile', JSON.stringify(state.profile));
   localStorage.setItem('td_passed', JSON.stringify(state.passedIds));
   localStorage.setItem('td_matchIds', JSON.stringify(state.matchIds));
@@ -35,7 +33,6 @@ function save() {
 
 function load() {
   try {
-    state.user     = JSON.parse(localStorage.getItem('td_user'));
     state.profile  = JSON.parse(localStorage.getItem('td_profile'));
     state.passedIds = JSON.parse(localStorage.getItem('td_passed')) || [];
     state.matchIds  = JSON.parse(localStorage.getItem('td_matchIds')) || [];

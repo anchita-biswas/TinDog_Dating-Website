@@ -15,13 +15,12 @@ below.
 
 - **Landing page** — responsive marketing site with features, safety,
   testimonials, pricing, and download sections
-- **Auth** — sign up / log in (mock, `localStorage`-backed)
 - **Onboarding** — 4-step dog profile setup: info, photo & bio, personality
-  tags, location
+  tags, location — or one click straight into a demo profile
 - **Swipe deck** — drag or button-based like/pass/super-like, with match
   animation and confetti
-- **Matches & Chat** — per-match conversation threads with a simulated
-  auto-reply
+- **Matches & Chat** — per-match conversation threads, with replies chosen by
+  keyword and spoken in each dog's own voice (energy level drives the tone)
 - **Filters** — breed, size, age range, distance, energy level
 - **Notifications** — in-app alerts for matches, likes, and boosts
 - **Responsive** — desktop sidebar + right panel, collapses to a bottom nav
@@ -47,20 +46,18 @@ directly in a browser (no server required).
 ```
 TinDog-Dating Website/
 ├── index.html            landing page + app shell
-├── login.html             sign in / sign up
 ├── css/
-│   ├── styles.css          index.html styling
-│   └── login.css           login.html styling
+│   └── styles.css          all styling
 ├── js/
 │   ├── models/
 │   │   ├── session.js        localStorage session keys + clearSession()
-│   │   ├── dogs.js            mock dog data
+│   │   ├── dogs.js            mock dog data + the chat reply engine
+│   │   ├── dogs.test.js       self-check for the reply engine
 │   │   └── state.js           app state, save/load, pool building
 │   ├── views/
 │   │   └── render.js          all DOM rendering + UI helpers
 │   └── controllers/
-│       ├── appController.js   event handlers for index.html (the `App` object)
-│       └── authController.js  event handlers for login.html
+│       └── appController.js   event handlers for index.html (the `App` object)
 └── images/
 ```
 
@@ -90,9 +87,11 @@ Then double-click `index.html`, or drag it into any browser window.
 - Primary brand color `#ff4c68` (coral pink) used across hero, safety, and
   CTA sections
 - The **Labrador** pricing tier is highlighted as "Popular"
-- Match data lives entirely in `localStorage` under a single active
-  session — signing out or creating a new account clears it, so one
-  account's matches/chats never leak into another on a shared device
+- **No sign-in.** This is a portfolio demo, so there are no accounts: the dog
+  profile *is* the session. A first visit lands on onboarding, or skips straight
+  into the deck; "Reset Demo" clears `localStorage` and starts over
+- Chat replies are generated locally from each dog's own traits — no API key,
+  no backend, works offline and straight from `file://`
 
 ## 🙏 Credits
 

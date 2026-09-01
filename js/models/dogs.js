@@ -33,13 +33,59 @@ const OPENING_MSGS = {
   d12:'*sits* *stays* *good boy* 🦸 Hi. I\'m looking for something serious. Are you?',
 };
 
-const BOT_REPLIES = [
-  'That sounds so fun! My tail is wagging just thinking about it! 🐾',
-  'My owner just read this over my shoulder and said "aww" haha',
-  'YES! We should definitely do that. The dog park on Main Street is my fave 🌳',
-  'You had me at treats 🦴 When are we meeting?',
-  'Woof! I literally just did a zoomie around the room when I read that!',
-  'My human is being SO embarrassing, they are taking photos of me texting you 😅',
-  'Okay but what\'s your stance on belly rubs? Asking for important reasons.',
-  'I showed my owner your photo and they said your dog is gorgeous! 😍',
+/* Reply engine — picks a line by what was said, then speaks it in the
+   dog's own voice. {excite}/{tail} are filled from the dog's energy, so
+   a Low-energy Frenchie and a High-energy Dalmatian answer differently. */
+const REPLY_RULES = [
+  { test: /\b(park|walk|run|hike|outside|zoomies)\b/i, lines: [
+      'The park?! {excite} I\'m already waiting by the door.',
+      'Say "walk" one more time. I dare you. 🦮',
+      'I know exactly which route. Trust me, I\'ve mapped every good smell.' ] },
+  { test: /\b(food|treat|snack|eat|dinner|hungry|bone)\b/i, lines: [
+      'Treats? You now have my full and undivided attention. 🦴',
+      'I am legally required to tell you I have never once been fed.',
+      '{tail} Go on. Say the word again.' ] },
+  { test: /\b(cute|beautiful|handsome|gorgeous|adorable|love|pretty)\b/i, lines: [
+      'Stop it. 😳 ...ok keep going.',
+      'I showed my human this and they said "aww" out loud.',
+      'You\'re not so bad yourself, you know. {tail}' ] },
+  { test: /\b(hi|hey|hello|woof|sup|yo)\b/i, lines: [
+      'Hi!! {excite}',
+      'Hey there 🐾 my human is reading this over my shoulder.',
+      'Oh! Hi. {tail} I was hoping you\'d message first.' ] },
+  { test: /\b(play|ball|fetch|toy|frisbee|stick)\b/i, lines: [
+      'Ball. BALL. {excite}',
+      'I have seventeen toys and I will bring you all of them.',
+      'Fair warning: I don\'t actually give the ball back.' ] },
+  { test: /\b(nap|sleep|tired|lazy|couch|rest)\b/i, lines: [
+      'Finally, someone who gets it. 😌',
+      'I\'ve been asleep for six hours and honestly? Could go longer.',
+      'Is this an invitation to nap in the same room? Because yes.' ] },
+  { test: /\?\s*$/, lines: [
+      'Hmm! {tail} Honestly? Yes.',
+      'Great question. My human says I\'m not qualified to answer that. 😅',
+      'Let me think about it... ok I thought about it. Absolutely.' ] },
 ];
+
+/* Voice by energy level — one entry per value used in DOGS. */
+const VOICE = {
+  High:   { excite: 'ZOOMIES INITIATED.',                tail: '*tail going full speed*' },
+  Medium: { excite: 'Ok, that\'s genuinely exciting.',    tail: '*tail wags*' },
+  Low:    { excite: '...I sat up. That\'s how you know.', tail: '*one slow tail thump*' },
+};
+
+const FALLBACK_LINES = [
+  '{tail} You\'re easy to talk to, you know that?',
+  'My human is being SO embarrassing, they\'re photographing me texting you.',
+  'Tell me more. I\'m told I\'m an excellent listener.',
+];
+
+function botReply(dog, userText) {
+  const voice = VOICE[dog.energy] || VOICE.Medium;
+  const rule  = REPLY_RULES.find(r => r.test.test(userText));
+  const pool  = rule
+    ? rule.lines
+    : [`${dog.personality[0]} as always — tell me more!`, ...FALLBACK_LINES];
+  return pool[Math.floor(Math.random() * pool.length)]
+    .replace(/\{(\w+)\}/g, (_, key) => voice[key] || '');
+}
